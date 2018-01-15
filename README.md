@@ -8,9 +8,9 @@ This repository presents a quick start guide for SciSpark, an extension over Apa
 ## Presentation Video
 
 An unedited video is available. Please, click in the image below to watch it.
-
-![https://drive.google.com/file/d/1An1dPVZpZzKLIOZOhE66qn1ca9XnynhC/view](SciSpark.png)
-
+<a href="https://drive.google.com/file/d/1An1dPVZpZzKLIOZOhE66qn1ca9XnynhC/view" target="_blank">
+![](SciSpark.png)
+</a>
 ## Download
 
 ## Quick Start Guide
