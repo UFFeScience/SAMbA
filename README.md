@@ -12,5 +12,10 @@ To watch the video, please, click in the image below.
 ![](SciSpark.png)
 </a>
 ## Download
+### Docker image
+
+There is also available for download a Docker image with all software requirements to run our applications using SciSpark and Apache Spark (our baseline).
+
+Link to download our Docker image: [https://hub.docker.com/r/thaylongs/sci-spark/tags](https://hub.docker.com/r/thaylongs/sci-spark/tags).
 
 ## Quick Start Guide
