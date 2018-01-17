@@ -36,7 +36,7 @@ This command will share the current folder of the terminal (```$PWD:/workspace``
 After you run the command, an bash in the workspace directory will be available for you run your codes. This container, the binary of Apache Spark and Scala already in the ```PATH``` environment variable. This environment also already has the following variables. 
 - SPARK_HOME => The SciSpark root path.
 - WORKSPACE  => The workspace path.
-- SCI_SPARK_REPOSITORY => The cvs repository path.
+- SCI_SPARK_REPOSITORY => The VCS repository path.
 - SCI_SPARK_CLASS_PATH => List of all jars of SciSpark/Spark, it is used to compile your source code. 
 
 In this container, to compile a scala source code for create the .jar to submit to SciSpark, you run the follow command:
@@ -52,3 +52,40 @@ scala -cp $SCI_SPARK_CLASS_PATH -J-Xmx1g
 ```
 
 ## Quick Start Guide
+
+SciSpark is an extension of [Apache Spark](https://spark.apache.org/), and as such, hash all default characteristics of its baseline. In this way, most existing Spark codes, which depends only of Spark Core, are compatible with our implementation. So, in this quick start guide, we will show the only the methods that we implemented.
+
+In the Spark, everything starts with the creation of [```SparkContext```](https://spark.apache.org/docs/2.2.1/api/java/org/apache/spark/SparkContext.html). This class is used to begin the transformation process and can receive as parameter the [```SparkConf```](https://spark.apache.org/docs/2.2.1/api/java/org/apache/spark/SparkConf.html). The ```SparkConf``` is used to configure an execution and in the Spark, and now this class has new methods:
+
+- ```enableProvence()``` and ```disableProvence()``` : to enable e disable the provenance;
+- ```enableVersionControl()``` and ```disableVersionControl()``` : to enable e disable the version control system;
+- ```setScriptDir(directory: String)``` : method used to inform the SciSpark where are the script or programs that will be executed by the runScientificApplication method;
+
+### New RDD Operations
+
+
+In the Spark, we handle the data through of creates [```RDD```](https://spark.apache.org/docs/2.2.1/api/java/org/apache/spark/rdd/RDD.html), to create one, we use the ```SparkContext``` that create one from some source of data. All data dealt with by one ```RDD``` is saved in the database of provenance. If you don't want it for a specific ```RDD```, just call the ```ignoreIt()``` method. It is useful if a transformation doesn't produce a relevant data.
+
+
+#### Schema
+
+As previously stated, all data handled by one RDD is saved in the database. To improve the information that will be saved there, you can use the Schema. Utilizing Schema, you can select only the relevant data or format it. To create a Schema, you should create a class and extends the interfaces class ```DataElementSchema``` or ```SingleLineSchema``` and implemented the methods. In both classes have the method ```geFieldsNames()``` that expect as a result an array of string with all attributes of data.
+
+
+* Sample of code: DataElementSchema
+
+TODO
+
+* Sample of code: SingleLineSchema
+
+TODO
+
+To assign a Schema to a RDD, you use the method ```setSchema(schema: DataElementSchema[T])``` that receive as the parameter a Schema of the type that its handle.  
+
+
+* Sample of assign a Schema to a RDD
+
+TODO
+
+### File Group
+
