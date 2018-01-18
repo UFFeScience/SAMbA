@@ -178,14 +178,17 @@ def ofFile(_file: File, keepBaseDir: Boolean, extraArgs: Map[String, Any]): File
 }
 
 ```
-### ***How execute a black-box program.***
+
+The ```FileGroupTemplate``` also has an optional attribute, its name. It can be setted by ```setName(newName: String)``` method .  In the version control, this name is used to identify the ```FileGroup``` that it represents.
+
+### How execute a black-box program.
 
 The method ```fileGroup``` of ```SparkContext```, return a ```RDD[FileGroup]```. This kind of RDD has two new methods to run a native program, being them:
 
 -  ```runScientificApplication( ... ):RDD[FileGroup]```
 -  ```runCommand( ... ): RDD[FileGroup]```
 
-#### ***When use the: ```runScientificApplication```***
+#### When use the: ```runScientificApplication```
 This method is used to run program/script that is in directory folder informed in Spark configuration with ```setScriptDir```. This method receives as a parameter the command to execute, as its respective arguments. Besides, this method also has a template engine that is used to insert map information from the ```FileGroup```. More information about the template engine can be found [here](http://jtwig.org/documentation/quick-start/application). The source code below is an example of use this method.
 
 ```scala 
@@ -250,6 +253,32 @@ someRDD.runCommand{(extraInfo: Map[String, Any], fileElements: Seq[FileElement])
     }
 
 ```
+### FileGroup Attributes 
+The ```FileGroup``` has the following code:
+
+```java 
+public class FileGroup implements Serializable {
+
+    private String name = null; //The Name of FileGroup
+    private Map<String, Object> extraInfo; // The map if extra information
+    private FileElement[] fileElements; // A array of files that it represents. 
+  ....
+}
+```
+
+To read a file, you need access the fileElements and find what file you want. A ```FileElement``` has the following methods to get its attributes:
+
+- ```getFileName():String``` - The File name
+- ```getFilePath():String``` - The File Path
+- ```getFileSize():String``` - The File Size
+- ```getContents().toInputStream(): java.io.InputStream``` - Create a InputStream
+
+### Saving FileGroup in Disk
+A ```RDD[FileGroup]``` also has two methods to save the data that it represents on disk: 
+
+- ```saveFilesAt(directory: java.io.File)``` - save the data inside the directory. For each FileGroup, is create another directory with its ID.
+
+- ```saveFilesAtAsync(directory: java.io.File): org.apache.spark.FutureAction``` - do the same thing of ```saveFilesAt``` but now non-blocking way.
 
 ## Download: Docker image
 
