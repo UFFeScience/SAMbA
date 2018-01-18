@@ -1,0 +1,30 @@
+>1lcl|AAX80930.1 small nuclear ribonucleoprotein SmD3, putatives72.7% (but over a small region) identical to: GP:9837180: Sm-D3 {Trypanosoma cruzi} PMID:10900267; GO_component: nucleus [GO ID 0005634]; GO_component: small nuclear ribonucleoprotein complex [GO ID 0030532]; GO_function: pre-mRNA splicing factor activity [GO ID 0008248]; GO_process: mRNA processing [GO ID 0006397]
+MNTEGLPLKVLSDAVGTTVSLELKNGELYTGTLSEVVDNMGVLLTSARKTTMAGREVDMPKVLVCGTNIVFFQLPDALRC
+CPPLMKMGKLLPSDLDGRGDGKGFGAHRSRKKPKK
+>2lcl|CAD51781.1 small nuclear ribonucleoprotein (snRNP), putativesSimilar to Homo sapiens small nuclear ribonucleoprotein sm d3 snrpd3 SW:SMD3_HUMAN (P43331) (126 aa) fasta scores: E(): 1.2e-08, 41.322% id in 121 aa. Pfam match to PF01423,small nuclear ribonucleoprotein (Sm protein)
+MSVGIPIKLLHEGIGHTISVETKSGILYRGTLVNREKIKKRNFNEDNMNCLLENVSVVKKDGKQILLEQVYIRGGSVSFM
+IFPDMLRYAPIFKINKSKAKTNFTTIRRAMEAHARIASKNKDLKA
+>3lcl|XP_001686492.1 small nuclear ribonucleoprotein, putativesCHR34_tmp.3440, predicted protein, len = 114 aa, probably small nuclear ribonucleoprotein; predicted pI = 10.2918; good similarity to several small nuclear ribonucleoprotein in several diverse organisms
+MAESIPIKVLFDALHLKVSIEVATGEVYHGTVEELQNNMNVLLKDATKTARGGKETKMDSVFVRGSNIVFFQLPDALQTS
+PALLRAGEVVSKAKDTRGDGKGFGASRKRARNS
+>4lcl|XP_653731.1 small nuclear ribonucleoprotein, putativesencoded by transcript EHI_163710A
+MNIGAPLKIFHESKGTIVTIEVKTGETYRGRMVETEDNMNCQLRDVTITAKDGSQSRTEYIFIRGNQVRFVVLPEMFKNS
+PCLKSSELKKHVQVKKPKKNNKKPTLVQSSK
+>5lcl|XP_818947.1 small nuclear ribonucleoprotein SmD3, putativeshomozygous allele located in a merged assembly of Esmeraldo and non-Esmeraldo homologous sequences or a repetitive gene whose different copies were merged during the assembly
+MSTFSIPLKVLFDAIGTTISLEVSNGELYTGTLSEVQDNMNVLLISAKKTKKSGKTVDLNSVFVRGSSIVFFQLPDALRT
+SPALVKAGQVLTNALDNRGDSKGFGARRVVKRGRE
+>1lcl|AAX80930.1 small nuclear ribonucleoprotein SmD3, putatives72.7% (but over a small region) identical to: GP:9837180: Sm-D3 {Trypanosoma cruzi} PMID:10900267; GO_component: nucleus [GO ID 0005634]; GO_component: small nuclear ribonucleoprotein complex [GO ID 0030532]; GO_function: pre-mRNA splicing factor activity [GO ID 0008248]; GO_process: mRNA processing [GO ID 0006397]
+MNTEGLPLKVLSDAVGTTVSLELKNGELYTGTLSEVVDNMGVLLTSARKTTMAGREVDMPKVLVCGTNIVFFQLPDALRC
+CPPLMKMGKLLPSDLDGRGDGKGFGAHRSRKKPKK
+>2lcl|CAD51781.1 small nuclear ribonucleoprotein (snRNP), putativesSimilar to Homo sapiens small nuclear ribonucleoprotein sm d3 snrpd3 SW:SMD3_HUMAN (P43331) (126 aa) fasta scores: E(): 1.2e-08, 41.322% id in 121 aa. Pfam match to PF01423,small nuclear ribonucleoprotein (Sm protein)
+MSVGIPIKLLHEGIGHTISVETKSGILYRGTLVNREKIKKRNFNEDNMNCLLENVSVVKKDGKQILLEQVYIRGGSVSFM
+IFPDMLRYAPIFKINKSKAKTNFTTIRRAMEAHARIASKNKDLKA
+>3lcl|XP_001686492.1 small nuclear ribonucleoprotein, putativesCHR34_tmp.3440, predicted protein, len = 114 aa, probably small nuclear ribonucleoprotein; predicted pI = 10.2918; good similarity to several small nuclear ribonucleoprotein in several diverse organisms
+MAESIPIKVLFDALHLKVSIEVATGEVYHGTVEELQNNMNVLLKDATKTARGGKETKMDSVFVRGSNIVFFQLPDALQTS
+PALLRAGEVVSKAKDTRGDGKGFGASRKRARNS
+>4lcl|XP_653731.1 small nuclear ribonucleoprotein, putativesencoded by transcript EHI_163710A
+MNIGAPLKIFHESKGTIVTIEVKTGETYRGRMVETEDNMNCQLRDVTITAKDGSQSRTEYIFIRGNQVRFVVLPEMFKNS
+PCLKSSELKKHVQVKKPKKNNKKPTLVQSSK
+>5lcl|XP_818947.1 small nuclear ribonucleoprotein SmD3, putativeshomozygous allele located in a merged assembly of Esmeraldo and non-Esmeraldo homologous sequences or a repetitive gene whose different copies were merged during the assembly
+MSTFSIPLKVLFDAIGTTISLEVSNGELYTGTLSEVQDNMNVLLISAKKTKKSGKTVDLNSVFVRGSSIVFFQLPDALRT
+SPALVKAGQVLTNALDNRGDSKGFGARRVVKRGRE

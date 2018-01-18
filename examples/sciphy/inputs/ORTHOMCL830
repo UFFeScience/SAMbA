@@ -1,0 +1,32 @@
+>1lcl|AAX79204.1 DNA-directed RNA polymerase subunit, putativesGO_function: DNA binding [GO ID 0003677]; GO_function: DNA-directed RNA polymerase activity [GO ID 0003899]; GO_process: transcription, DNA-dependent [GO ID 0006351]
+MSERDEDEVDRLSLSIGDEHESVAQSDDERSDAGAGVVVSGPAPVRGSAKRRDDRDRVTAPVLTKYERARILGTRALQIS
+MNAPVLVALEGETDPLTIAQKELREGVIPLIIRRVLPDNTYEDWRICELDVDFDRPVDERYTNI
+>2lcl|CAB10577.1 DNA-directed RNA polymerase subunit I, putativesFirst exon unsure Pfam match to entry PF01192 RNA_pol_K, RNA polymerases K / 14 to 18 kDa subunit, score 75.10, E-value 1.5e-18 Similar to Plasmodium vivax pv1h14085_p pv1h14085C SWALL:AAF99463 (EMBL:AY003872) (157 aa) fasta scores: E(): 1.6e-46, 84.41% id in 154 aa, and to Drosophila melanogaster DNA-directed RNA polymerase ii 14.4 kDa polypeptide rpii18 or rpabc14 or cg1163 SWALL:RPB6_DROME (SWALL:Q24320) (131 aa) fasta scores: E(): 1.2e-05, 40.41% id in 146 aa, and to Rattus norvegicus DNA-directed RNA polymerase ii 14.4 kDa polypeptide polr2F SWALL:RPB6_RAT (SWALL:O88828) (127 aa) fasta scores: E(): 3.2e-05, 44.44% id in 144 aa
+MNKYLCLYFLLDGFNDNYLNEDEDFMGDEFGQGIDSDDGENYENDIDIITDHQIKKDNKSDYENSEANEDNIRITSPYLT
+KYEKARIIGTRALQISMNAPLTIPIETSNDMINSKNEYDNYLNNDPLVIAEKELYNKSIPFILRRYLPNGSYEDWRLDEL
+IID
+>3lcl|XP_001686182.1 DNA-directed RNA polymerase subunit, putativesCHR34_tmp.0890, predicted protein, len = 160 aa, probably DNA-directed RNA polymerase; predicted pI = 4.1040; good similarity to many DNA-directed RNA polymerase in other eukaryotic organisms; contains a RNA polymerase Rpb6 pfam domain
+MSDHDDEDDLLSLNLGDDRDEGDSGSDIRHSGADEEDEEGGEQLPEDVAANVILSGNAQAAKGARARGINERVTSAVMTK
+YERARVLGTRALQISMNAPVAVALEGETDPLTIAVKELRERRTPLIIRRVLPDNTYEDWSVSELLVDFDRPADERYTNI
+>4lcl|XP_654512.1 DNA-directed RNA polymerases I, II, and III 23 kDa, putativesencoded by transcript EHI_088230A
+MSSDNEAGNDSYSMSEDSNNEDLVIDYYDDLGVDNYIEEKEIKGDDRTTTRFMTKYEKARVLGTRALQISMNAPVFVPLN
+GMTDALEIAMAELKAGKIPFIIRRRLPNGSYEDWKVSELIVE
+>5lcl|XP_803144.1 DNA-directed RNA polymerase subunit, putativesheterozygous, non-Esmeraldo-like haplotype
+MSDRDGDDDRLSLNFGEEQEESTLRSDDEQSEGDGADVVLSGRAASGSAVRRDGKDRVTAPVLTKYERARILGTRALQIS
+MNAPVLVALEGETDPLIIAQKELREGVIPLIVRRVLPDNTYEDWRICELDIDFDRPADERYTNI
+>6lcl|XP_806275.1 DNA-directed RNA polymerase subunit, putativesgene with more than two copies in the genome that does not belong to a merged region and that could not be assigned to a particular haplotype
+MSDRDGDDDRLSLNFGEEQEESTLRSDDEQSEGDGADVVLSGRAASGTAVRRDGKDRVTAPVLTKYERARILGTRALQIS
+MNAPVLVALEGETDPLIIAQKELREGVIPLIVRRVLPDNTYEDWRICELDIDFDRPADERYTNI
+>1lcl|AAX79204.1 DNA-directed RNA polymerase subunit, putativesGO_function: DNA binding [GO ID 0003677]; GO_function: DNA-directed RNA polymerase activity [GO ID 0003899]; GO_process: transcription, DNA-dependent [GO ID 0006351]
+MSERDEDEVDRLSLSIGDEHESVAQSDDERSDAGAGVVVSGPAPVRGSAKRRDDRDRVTAPVLTKYERARILGTRALQIS
+MNAPVLVALEGETDPLTIAQKELREGVIPLIIRRVLPDNTYEDWRICELDVDFDRPVDERYTNI
+>2lcl|CAB10577.1 DNA-directed RNA polymerase subunit I, putativesFirst exon unsure Pfam match to entry PF01192 RNA_pol_K, RNA polymerases K / 14 to 18 kDa subunit, score 75.10, E-value 1.5e-18 Similar to Plasmodium vivax pv1h14085_p pv1h14085C SWALL:AAF99463 (EMBL:AY003872) (157 aa) fasta scores: E(): 1.6e-46, 84.41% id in 154 aa, and to Drosophila melanogaster DNA-directed RNA polymerase ii 14.4 kDa polypeptide rpii18 or rpabc14 or cg1163 SWALL:RPB6_DROME (SWALL:Q24320) (131 aa) fasta scores: E(): 1.2e-05, 40.41% id in 146 aa, and to Rattus norvegicus DNA-directed RNA polymerase ii 14.4 kDa polypeptide polr2F SWALL:RPB6_RAT (SWALL:O88828) (127 aa) fasta scores: E(): 3.2e-05, 44.44% id in 144 aa
+MNKYLCLYFLLDGFNDNYLNEDEDFMGDEFGQGIDSDDGENYENDIDIITDHQIKKDNKSDYENSEANEDNIRITSPYLT
+KYEKARIIGTRALQISMNAPLTIPIETSNDMINSKNEYDNYLNNDPLVIAEKELYNKSIPFILRRYLPNGSYEDWRLDEL
+IID
+>3lcl|XP_001686182.1 DNA-directed RNA polymerase subunit, putativesCHR34_tmp.0890, predicted protein, len = 160 aa, probably DNA-directed RNA polymerase; predicted pI = 4.1040; good similarity to many DNA-directed RNA polymerase in other eukaryotic organisms; contains a RNA polymerase Rpb6 pfam domain
+MSDHDDEDDLLSLNLGDDRDEGDSGSDIRHSGADEEDEEGGEQLPEDVAANVILSGNAQAAKGARARGINERVTSAVMTK
+YERARVLGTRALQISMNAPVAVALEGETDPLTIAVKELRERRTPLIIRRVLPDNTYEDWSVSELLVDFDRPADERYTNI
+>4lcl|XP_654512.1 DNA-directed RNA polymerases I, II, and III 23 kDa, putativesencoded by transcript EHI_088230A
+MSSDNEAGNDSYSMSEDSNNEDLVIDYYDDLGVDNYIEEKEIKGDDRTTTRFMTKYEKARVLGTRALQISMNAPVFVPLN
+GMTDALEIAMAELKAGKIPFIIRRRLPNGSYEDWKVSELIVE

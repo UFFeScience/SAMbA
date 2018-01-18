@@ -1,0 +1,3 @@
+* text eol=ln
+*.cmd text eol=ln
+*.sh text eol=ln

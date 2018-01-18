@@ -1,0 +1,6 @@
+examples/sciphy/Source Code/*.jar
+examples/sciphy/Source Code/inputList.txt
+examples/sciphy/output/*
+examples/sciphy/database/*
+examples/sciphy/repository/*
+*.pyc

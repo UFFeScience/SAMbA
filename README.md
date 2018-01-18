@@ -287,7 +287,11 @@ Another important feature provided by SciSpark is a web interface. This interfac
 ![](webinterface.png)
 
 ## Version Control System
-SciSpark also provides to your users a version control system. When you create a FileGroup through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the FileGroup that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SCI_SPARK_REPOSITORY.
+SciSpark also provides to your users a version control system. When you create a ```FileGroup``` through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the ```FileGroup``` that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SCI_SPARK_REPOSITORY.
+
+## Example
+
+You can found a list with examples on [here](examples/README.md).
 
 ## Download: Docker image
 
@@ -295,15 +299,15 @@ We make SciSpark available for download through a [Docker](https://www.docker.co
 
 ### Pull the image
 To get the docker image, you need to pull it from docker hub. For this, run the command: 
-```
+```bash
 docker pull thaylongs/sci-spark
 ```
 ### Configuration and Running the Image
 After you pull the Docker image, now you can create a container from this image running the follow command:
 
-```
-docker run --rm -it \
-       -p 8000:8000 -p 9042:9042 \
+```bash
+docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
+       --privileged --rm -it -p 8000:8000 -p 9042:9042 \
        -v $PWD/repository:/SciSparkFiles/SciSpark/gitblit/data/git \
        -v $PWD/database:/SciSparkFiles/datastax-ddc-3.9.0/data \
        -v $PWD:/home/scispark/workspace thaylongs/sci-spark
@@ -319,13 +323,13 @@ After you run the command, an bash in the workspace directory will be available 
 
 In this container, to compile a scala source code for create the .jar to submit to SciSpark, you run the follow command:
 
-```
+```bash
 scalac -classpath "$SCI_SPARK_CLASS_PATH" SourceCode.scala -d TheOutput.jar
 ``` 
 
 You also can run the scala interactive shell, with all SciSpark/Spark jars, running the follow command: 
 
-```
+```bash
 scala -cp $SCI_SPARK_CLASS_PATH -J-Xmx1g
 ```
 
