@@ -280,6 +280,15 @@ A ```RDD[FileGroup]``` also has two methods to save the data that it represents 
 
 - ```saveFilesAtAsync(directory: java.io.File): org.apache.spark.FutureAction``` - do the same thing of ```saveFilesAt``` but now non-blocking way.
 
+## Web Interface
+
+Another important feature provided by SciSpark is a web interface. This interface is accessed through the browser on localhost on port 8000. In this web interface, you will found information about the execution that already executed, such the transformation graph or the data elements which was generated and used by it. To see this web interface in action, with an explanation of all its feature, please, watch the demonstration video. 
+
+![](webinterface.png)
+
+## Version Control System
+SciSpark also provides to your users a version control system. When you create a FileGroup through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the FileGroup that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SCI_SPARK_REPOSITORY.
+
 ## Download: Docker image
 
 We make SciSpark available for download through a [Docker](https://www.docker.com/) image. This image has all softwares requirements to run our applications using SciSpark and Apache Spark (our baseline). To download and run it, follow the steps below.
