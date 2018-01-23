@@ -10,9 +10,10 @@ docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
        -v $PWD:/home/scispark/workspace thaylongs/sci-spark
 ```
 
-After the boot the container boot, go to "Source Code" directory and run the following commands:
+After the container boot, go to "Source Code" directory and run the following commands:
 
-```bash 
+```bash
+cd "Source Code"
 sh build.sh
 sh submit.sh
 ```
