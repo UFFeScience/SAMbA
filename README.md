@@ -1,21 +1,21 @@
-# SciSpark
+# SAMbA (Spark provenAnce MAnagement)
 >An extension of Apache Spark for scientific computational experiments
 
 ## Overview
 
-This repository presents a quick start guide for SciSpark, an extension over Apache Spark, which aims at running black-box native programs that handle raw data files. Furthermore, this engine collects, store, and query provenance and domain-specific data that were manipulated during the execution of scientific applications. With respect to the analytical capabilities, SciSpark provides runtime dataflow analysis based on the provenance traces.
+This repository presents a quick start guide for SAMbA, an extension over Apache Spark, which aims at running black-box native programs that handle raw data files. Furthermore, this engine collects, store, and query provenance and domain-specific data that were manipulated during the execution of scientific applications. With respect to the analytical capabilities, SciSpark provides runtime dataflow analysis based on the provenance traces.
 
 
 
 ## Quick Start Guide
 
-SciSpark is an extension of [Apache Spark](https://spark.apache.org/), and as such, has all default characteristics of its baseline. In this way, most existing Spark codes, which depends only of Spark Core, are compatible with our implementation. So, in this quick start guide, we will show the only the methods that we implemented.
+SAMbA is an extension of [Apache Spark](https://spark.apache.org/), and as such, has all default characteristics of its baseline. In this way, most existing Spark codes, which depends only of Spark Core, are compatible with our implementation. So, in this quick start guide, we will show the only the methods that we implemented.
 
 In the Spark, everything starts with the creation of [```SparkContext```](https://spark.apache.org/docs/2.2.1/api/java/org/apache/spark/SparkContext.html). This class is used to begin the transformation process and can receive as parameter the [```SparkConf```](https://spark.apache.org/docs/2.2.1/api/java/org/apache/spark/SparkConf.html). The ```SparkConf``` is used to configure an execution and in the Spark, and now this class has new methods:
 
 - ```enableProvenance()``` and ```disableProvenance()``` : To enable e disable the provenance;
 - ```enableVersionControl()``` and ```disableVersionControl()``` : To enable e disable the version control system;
-- ```setScriptDir(directory: String)``` : Method used to inform the SciSpark where are the script or programs that will be executed by the runScientificApplication method;
+- ```setScriptDir(directory: String)``` : Method used to inform the SAMbA where are the script or programs that will be executed by the runScientificApplication method;
 
 By default, the provenance and the version control system are enabled.
 
@@ -85,7 +85,7 @@ If you don't inform a Scheme to an RDD, a default one will be used, which change
 
 ### Black-box application support
 
-The main feature of SciSpark, besides the provenance manage, is the possibility the run black-box application which handles files with the Spark. To do it, we create an abstraction called ```FileGroup```. A ```FileGroup``` is a feature which allows the users load data stored in a set of files into an in-memory filesystem. To load a set of files into memory, we use a new method of ```SparkContext``` the ```fileGroup```. This method receives as the parameter a ```varargs``` of ```FileGroupTemplate```.
+The main feature of SAMbA, besides the provenance manage, is the possibility the run black-box application which handles files with the Spark. To do it, we create an abstraction called ```FileGroup```. A ```FileGroup``` is a feature which allows the users load data stored in a set of files into an in-memory filesystem. To load a set of files into memory, we use a new method of ```SparkContext``` the ```fileGroup```. This method receives as the parameter a ```varargs``` of ```FileGroupTemplate```.
 
 
 This ```FileGroupTemplate``` can be created with helpers methods:
@@ -282,12 +282,12 @@ A ```RDD[FileGroup]``` also has two methods to save the data that it represents 
 
 ## Web Interface
 
-Another important feature provided by SciSpark is a web interface. This interface is accessed through the browser on localhost on port 8000. In this web interface, you will found information about the execution that already executed, such the transformation graph or the data elements which was generated and used by it. To see this web interface in action, with an explanation of all its feature, please, watch the demonstration video. 
+Another important feature provided by SAMbA is a web interface. This interface is accessed through the browser on localhost on port 8000. In this web interface, you will found information about the execution that already executed, such the transformation graph or the data elements which was generated and used by it. To see this web interface in action, with an explanation of all its feature, please, watch the demonstration video. 
 
 ![](webinterface.png)
 
 ## Version Control System
-SciSpark also provides to your users a version control system. When you create a ```FileGroup``` through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the ```FileGroup``` that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SCI_SPARK_REPOSITORY.
+SAMbA also provides to your users a version control system. When you create a ```FileGroup``` through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the ```FileGroup``` that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SCI_SPARK_REPOSITORY.
 
 ## Example
 
@@ -295,7 +295,7 @@ You can found a list with examples on [here](examples/README.md).
 
 ## Download: Docker image
 
-We make SciSpark available for download through a [Docker](https://www.docker.com/) image. This image has all softwares requirements to run our applications using SciSpark and Apache Spark (our baseline). To download and run it, follow the steps below.
+We make SAMbA available for download through a [Docker](https://www.docker.com/) image. This image has all softwares requirements to run our applications using SAMbA and Apache Spark (our baseline). To download and run it, follow the steps below.
 
 ### Pull the image
 To get the docker image, you need to pull it from docker hub. For this, run the command: 
@@ -316,7 +316,7 @@ docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
 This command will share the current folder of the terminal (```$PWD:/workspace```) as the workspace of the container. So, in this folder should have the files that you want to use in your experiment, for example, source code and softwares. In our example command, inside the current directory will be created another two folders,  the ```$PWD/repository``` for save data from the git repository,  and the ```$PWD/database``` for save the database data. You can change these directories as you want. This command also opens the ports 8000 and 9042, for the web interface and the Cassandra database, respectively.
 
 After you run the command, an bash in the workspace directory will be available for you run your codes. This container, the binary of Apache Spark and Scala already in the ```PATH``` environment variable. This environment also already has the following variables. 
-- SPARK_HOME => The SciSpark root path.
+- SPARK_HOME => The SAMbA root path.
 - WORKSPACE  => The workspace path.
 - SCI_SPARK_REPOSITORY => The VCS repository path.
 - SCI_SPARK_CLASS_PATH => List of all jars of SciSpark/Spark, it is used to compile your source code. 
