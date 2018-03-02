@@ -336,6 +336,6 @@ scala -cp $SCI_SPARK_CLASS_PATH -J-Xmx1g
 ## Presentation Video
 
 To watch the video, please, click in the image below.
-<a href="https://drive.google.com/file/d/1Zb1u1vswO5GNBOHRxBelNqrEfEc5aLWY/view" target="_blank">
-![](SciSpark.png)
+<a href="https://drive.google.com/file/d/1st1dRJCGyTLNEVjZp5i-nnLjJkVjMNKZ/view" target="_blank">
+![](SAMbA.png)
 </a>
