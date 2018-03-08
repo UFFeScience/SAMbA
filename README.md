@@ -1,9 +1,13 @@
 # SAMbA (Spark provenAnce MAnagement)
 >An extension of Apache Spark for scientific computational experiments
 
+<p align="center">
+  <img src="home.png" style="max-height: 160px"/>
+</p>
+
 ## Overview
 
-This repository presents a quick start guide for SAMbA, an extension over Apache Spark, which aims at running black-box native programs that handle raw data files. Furthermore, this engine collects, store, and query provenance and domain-specific data that were manipulated during the execution of scientific applications. With respect to the analytical capabilities, SciSpark provides runtime dataflow analysis based on the provenance traces.
+This repository presents a quick start guide for SAMbA, an extension over Apache Spark, which aims at running black-box native programs that handle raw data files. Furthermore, this engine collects, store, and query provenance and domain-specific data that were manipulated during the execution of scientific applications. With respect to the analytical capabilities, SAMbA provides runtime dataflow analysis based on the provenance traces.
 
 
 
@@ -287,7 +291,7 @@ Another important feature provided by SAMbA is a web interface. This interface i
 ![](webinterface.png)
 
 ## Version Control System
-SAMbA also provides to your users a version control system. When you create a ```FileGroup``` through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the ```FileGroup``` that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SCI_SPARK_REPOSITORY.
+SAMbA also provides to your users a version control system. When you create a ```FileGroup``` through call the ```fileGroup``` method of ```SparkContext``` or run a black-box application, the ```FileGroup``` that its represents will be saved in this repository. All another Spark operation, this need be explicit, calling the method: ```persistFileGroupInGit() : RDD```. The git bare repository can be accessed by the user, the full path is available in environment variable SAMBA_SPARK_REPOSITORY.
 
 ## Example
 
@@ -308,9 +312,9 @@ After you pull the Docker image, now you can create a container from this image 
 ```bash
 docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
        --privileged --rm -it -p 8000:8000 -p 9042:9042 \
-       -v $PWD/repository:/SciSparkFiles/SciSpark/gitblit/data/git \
-       -v $PWD/database:/SciSparkFiles/datastax-ddc-3.9.0/data \
-       -v $PWD:/home/scispark/workspace thaylongs/sci-spark
+       -v $PWD/repository:/SAMbAFiles/SAMbA/gitblit/data/git \
+       -v $PWD/database:/SAMbAFiles/datastax-ddc-3.9.0/data \
+       -v $PWD:/home/samba/workspace thaylongs/sci-spark
 ```
 
 This command will share the current folder of the terminal (```$PWD:/workspace```) as the workspace of the container. So, in this folder should have the files that you want to use in your experiment, for example, source code and softwares. In our example command, inside the current directory will be created another two folders,  the ```$PWD/repository``` for save data from the git repository,  and the ```$PWD/database``` for save the database data. You can change these directories as you want. This command also opens the ports 8000 and 9042, for the web interface and the Cassandra database, respectively.
@@ -318,19 +322,19 @@ This command will share the current folder of the terminal (```$PWD:/workspace``
 After you run the command, an bash in the workspace directory will be available for you run your codes. This container, the binary of Apache Spark and Scala already in the ```PATH``` environment variable. This environment also already has the following variables. 
 - SPARK_HOME => The SAMbA root path.
 - WORKSPACE  => The workspace path.
-- SCI_SPARK_REPOSITORY => The VCS repository path.
-- SCI_SPARK_CLASS_PATH => List of all jars of SciSpark/Spark, it is used to compile your source code. 
+- SAMBA_SPARK_REPOSITORY => The VCS repository path.
+- SAMBA_SPARK_CLASS_PATH => List of all jars of SAMbA/Spark, it is used to compile your source code. 
 
-In this container, to compile a scala source code for create the .jar to submit to SciSpark, you run the follow command:
+In this container, to compile a scala source code for create the .jar to submit to SAMbA, you run the follow command:
 
 ```bash
-scalac -classpath "$SCI_SPARK_CLASS_PATH" SourceCode.scala -d TheOutput.jar
+scalac -classpath "$SAMBA_SPARK_CLASS_PATH" SourceCode.scala -d TheOutput.jar
 ``` 
 
-You also can run the scala interactive shell, with all SciSpark/Spark jars, running the follow command: 
+You also can run the scala interactive shell, with all SAMbA/Spark jars, running the follow command: 
 
 ```bash
-scala -cp $SCI_SPARK_CLASS_PATH -J-Xmx1g
+scala -cp $SAMBA_SPARK_CLASS_PATH -J-Xmx1g
 ```
 
 ## Presentation Video
