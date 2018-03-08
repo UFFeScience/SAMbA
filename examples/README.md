@@ -1,3 +1,3 @@
-# SciSpark Examples List
+# SAMbA Examples List
 
-- [SciPhy](sciphy/README.md)
+- [SAMbA](sciphy/README.md)
