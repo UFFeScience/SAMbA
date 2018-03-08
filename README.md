@@ -304,7 +304,7 @@ We make SAMbA available for download through a [Docker](https://www.docker.com/)
 ### Pull the image
 To get the docker image, you need to pull it from docker hub. For this, run the command: 
 ```bash
-docker pull thaylongs/sci-spark
+docker pull thaylongs/samba
 ```
 ### Configuration and Running the Image
 After you pull the Docker image, now you can create a container from this image running the follow command:
