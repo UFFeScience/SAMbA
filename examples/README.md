@@ -1,3 +1,3 @@
 # SAMbA Examples List
 
-- [SAMbA](sciphy/README.md)
+- [SciPhy](sciphy/README.md)
