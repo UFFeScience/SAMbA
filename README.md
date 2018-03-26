@@ -50,7 +50,7 @@ class SampleOfSingleLineSchemaOfString extends SingleLineSchema[String] {
 }
 ```
 
-* Sample of code: ```DataElementSchema``` - Use this kind of schema when the result has more then one line.
+* Sample of code: ```DataElementSchema``` - Use this kind of schema when the result has more than one line.
 
 ```scala
 import br.uff.spark.schema.DataElementSchema
