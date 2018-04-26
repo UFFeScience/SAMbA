@@ -224,7 +224,7 @@ someRDD.runCommand(Array("ls","-a")
 * A more complex:
 
 ```scala 
-import import br.uff.spark.advancedpipe.{ExecutionPlanning, FileElement}
+import br.uff.spark.advancedpipe.{ExecutionPlanning, FileElement}
 
 //function - a function that consumes the extra info provided by FileGroup and return a ExecutionPlanning
 def runCommand(function: (
