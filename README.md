@@ -31,7 +31,7 @@ In the Spark, we handle the data through of creates [```RDD```](https://spark.ap
 
 #### Schema
 
-As previously stated, all data handled by one RDD is saved in the database. To improve the information that will be saved there, you can use the Schema. Utilizing Schema, you can select only the relevant data or format it. To create a Schema, you should create a class and extends the interfaces class ```DataElementSchema[T]``` or ```SingleLineSchema[T]``` and implemented the methods. In both classes have the method ```geFieldsNames()``` that expect as a result an array of string with all attributes of data.
+As previously stated, all data handled by one RDD is saved in the database. To improve the information that will be saved there, you can use the Schema. Utilizing Schema, you can select only the relevant data or format it. To create a Schema, you should create a class and extends the interfaces class ```DataElementSchema[T]``` or ```SingleLineSchema[T]``` and implemented the methods. In both classes have the method ```getFieldsNames()``` that expect as a result an array of string with all attributes of data.
 
 * Sample of code: ```SingleLineSchema``` - Use this kind of schema when the result has only one line.
 
@@ -40,7 +40,7 @@ import br.uff.spark.schema.SingleLineSchema
 
 class SampleOfSingleLineSchemaOfString extends SingleLineSchema[String] {
 
-  override def geFieldsNames(): Array[String] = Array("Att 1", "Att 2")
+  override def getFieldsNames(): Array[String] = Array("Att 1", "Att 2")
 
   //value = "Value 1;Value 2"
   override def splitData(line: String): Array[String] = {
@@ -57,10 +57,10 @@ import br.uff.spark.schema.DataElementSchema
 
 class SampleOfMultiLineSchemaOfString extends DataElementSchema[String]{
 
-  override def geFieldsNames(): Array[String] = Array("Att 1", "Att 2")
+  override def getFieldsNames(): Array[String] = Array("Att 1", "Att 2")
 
   //value = "Line 1 Value 1;Line 1 Value 2;Line 2 Value 1;Line 2 Value 2"
-  override def getSplitedData(value: String): Array[Array[String]] = {
+  override def getSplittedData(value: String): Array[Array[String]] = {
   val data = value.split(";")
     Array(
       Array(data(0), data(1)),

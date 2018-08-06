@@ -49,7 +49,7 @@ object Main {
 
 class ReadSeqSchema extends SingleLineSchema[FileGroup] {
 
-  override def geFieldsNames(): Array[String] = Array("FILE_NAME", "NUM_ALIGNS", "LENGTH")
+  override def getFieldsNames(): Array[String] = Array("FILE_NAME", "NUM_ALIGNS", "LENGTH")
 
   override def splitData(value: FileGroup): Array[String] = {
     val file = value.getFileElements.filter(file => file.getFileName.endsWith(".phylip")).head
@@ -62,7 +62,7 @@ class ReadSeqSchema extends SingleLineSchema[FileGroup] {
 
 class ModelGeneratorSchema extends SingleLineSchema[FileGroup] {
 
-  override def geFieldsNames(): Array[String] = Array("MG_FILE_NAME", "MODEL1", "PROB1", "MODEL2", "PROB2")
+  override def getFieldsNames(): Array[String] = Array("MG_FILE_NAME", "MODEL1", "PROB1", "MODEL2", "PROB2")
 
   val template = "****Akaike Information Criterion "
   val modelTemplate = "Model Selected: "
@@ -111,7 +111,7 @@ class ModelGeneratorSchema extends SingleLineSchema[FileGroup] {
 
 class RaxmlSchema extends SingleLineSchema[FileGroup] {
 
-  override def geFieldsNames(): Array[String] = Array("BEST_TREE", "BEST_SCORE")
+  override def getFieldsNames(): Array[String] = Array("BEST_TREE", "BEST_SCORE")
 
   val template = "Final GAMMA-based Score of best tree "
 
