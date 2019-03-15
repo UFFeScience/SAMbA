@@ -1,4 +1,5 @@
-# SAMbA (Spark provenAnce MAnagement)
+<!---# SAMbA (Spark provenAnce MAnagement) -->
+# Samba-RaP
 >An extension of Apache Spark for scientific computational experiments
 
 <p align="center">
