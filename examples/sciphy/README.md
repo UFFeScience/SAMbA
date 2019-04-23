@@ -5,9 +5,9 @@ This directory has all files that you need to run the example that we shown in t
 ```bash
 docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
        --privileged --rm -it -p 8000:8000 -p 9042:9042 \
-       -v $PWD/repository:/SAMbAFiles/SAMbA/gitblit/data/git \
-       -v $PWD/database:/SAMbAFiles/datastax-ddc-3.9.0/data \
-       -v $PWD:/home/samba/workspace thaylongs/samba
+       -v "$PWD/repository:/SAMbAFiles/SAMbA/gitblit/data/git" \
+       -v "$PWD/database:/SAMbAFiles/apache-cassandra/data" \
+       -v "$PWD:/home/samba/workspace" thaylongs/samba
 ```
 
 After the container boot, go to "Source Code" directory and run the following commands:
