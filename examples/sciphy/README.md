@@ -30,7 +30,7 @@ Where the ```FILE_NAME``` is the file name of the file that you want to add. You
 
 The video below shows the sequence of commands that you needs to do to execute the example:
 
-<a href="https://asciinema.org/a/Qzg1SV1JhJlLHjlTpAzVIUviU" target="_blank">
+<a href="https://asciinema.org/a/ndWMECaBxT9Sdld8DuCp04fHO" target="_blank">
 
 
 ![](sciphy.png)
