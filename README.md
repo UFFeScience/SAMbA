@@ -313,9 +313,9 @@ After you pull the Docker image, now you can create a container from this image 
 ```bash
 docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
        --privileged --rm -it -p 8000:8000 -p 9042:9042 \
-       -v $PWD/repository:/SAMbAFiles/SAMbA/gitblit/data/git \
-       -v $PWD/database:/SAMbAFiles/datastax-ddc-3.9.0/data \
-       -v $PWD:/home/samba/workspace thaylongs/samba
+       -v "$PWD/repository:/SAMbAFiles/SAMbA/gitblit/data/git" \
+       -v "$PWD/database:/SAMbAFiles/apache-cassandra/data" \
+       -v "$PWD:/home/samba/workspace" thaylongs/samba
 ```
 
 This command will share the current folder of the terminal (```$PWD:/workspace```) as the workspace of the container. So, in this folder should have the files that you want to use in your experiment, for example, source code and softwares. In our example command, inside the current directory will be created another two folders,  the ```$PWD/repository``` for save data from the git repository,  and the ```$PWD/database``` for save the database data. You can change these directories as you want. This command also opens the ports 8000 and 9042, for the web interface and the Cassandra database, respectively.
