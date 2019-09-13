@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/DefaultLayout}">
+
+<head>
+    <title>SAMbA - Full Graph</title>
+</head>
+<section layout:fragment="css-extra">
+    <link th:href="@{/third-party/vis/dist/vis.min.css}" rel="stylesheet" type="text/css"/>
+    <style>
+        #executionTable > tbody > tr:hover {
+            background: #65aaff;
+            cursor: pointer;
+        }
+    </style>
+</section>
+<section layout:fragment="page-header">
+    All DataElements Produced In Dataflow: [[${execution.ApplicationName}]]
+</section>
+
+<section layout:fragment="content" id="app">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <i class="fa fa-info-circle"></i>
+                    <h3 class="box-title">Execution Metadata</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h4 style="background-color:#f7f7f7; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
+                                Execution Info
+                            </h4>
+                            <dl class="dl-horizontal">
+                                <dt>ID:</dt>
+                                <dd th:text="${execution.id}"></dd>
+                                <dt>Start Time</dt>
+                                <dd th:text="${execution.StartTime}"></dd>
+                                <dt>End Time</dt>
+                                <dd th:text="${execution.EndTime}"></dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-5">
+                            <h4 style="background-color:#f7f7f7; font-size: 18px; text-align: center; padding: 7px 10px; margin-top: 0;">
+                                Task Info
+                            </h4>
+                            <dl class="dl-horizontal">
+                                <dt>ID:</dt>
+                                <dd th:text="${task.id}"></dd>
+                                <dt>Type</dt>
+                                <dd th:text="${task.transformationType}"></dd>
+                                <dt>Description</dt>
+                                <dd th:text="${task.description}"></dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="small-box bg-green" style="margin-bottom: 0px;">
+                                <div class="inner" style="padding-bottom: 0px;">
+                                    <img th:src="@{/img/dataflow.png}"
+                                         style="max-height: 64px;display: block ;margin: 0 auto "/>
+                                </div>
+                                <div class="icon">
+                                </div>
+                                <a th:href="@{/execution/details(id=${execution.id})}" class="small-box-footer">
+                                    Show Transformation Graph
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Data Elements Graph</h3>
+                    <!--<div class="pull-right box-tools">-->
+                    <!--<div class="box-tools pull-right selectPeridoMenuBar">-->
+                    <!--<div style="display: table;">-->
+                    <!--<div style="display: table-cell; padding-right: 10px; font-size: 15px; vertical-align: middle;">-->
+                    <!--Node Label:-->
+                    <!--</div>-->
+                    <!--<div style="display: table-cell;">-->
+                    <!--<div id="selectNodeLabelGroup" data-toggle="buttons"-->
+                    <!--class="btn-group">-->
+                    <!--<label class="btn btn-default btn-sm active" id="node_label_type_id">-->
+                    <!--<input type="radio" name="nodeLabelOption" value="ID" autocomplete="off">-->
+                    <!--ID-->
+                    <!--</label>-->
+                    <!--<label class="btn btn-default btn-sm" id="node_label_type_value">-->
+                    <!--<input type="radio" name="nodeLabelOption" value="VALUE" autocomplete="off">-->
+                    <!--Value-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;<div class="btn-group">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-success">ID</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-success">Value</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--</div>-->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div id="graph" style="height: 70vh">
+
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="box-footer clearfix">-->
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+                <!--</div>-->
+                <!-- /.box-footer -->
+            </div>
+        </div>
+    </div>
+
+    <!--Modal area-->
+    <div class="modal fade" id="dataElementModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="margin: 0px; padding: 2px">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div class="nav-tabs-custom" style="cursor: move;margin-bottom: 0px">
+                                <!-- Tabs within a box -->
+                                <ul class="nav nav-tabs pull-right ui-sortable-handle box-success">
+                                    <li class="" v-show="popupData.hasFiles">
+                                        <a href="#files-tab" data-toggle="tab" aria-expanded="false" id="filesTAB_ID">
+                                            Files
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#content-tab" data-toggle="tab" aria-expanded="true"
+                                           id="contentTAB_ID">
+                                            Content
+                                        </a>
+                                    </li>
+                                    <li class="pull-left header"><i class="fa fa-inbox"></i>
+                                        Data Collection - {{selectedDataElementID}}
+                                    </li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane" id="files-tab" v-show="popupData.hasFiles"
+                                         style="position: relative; min-height: 350px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        <div id="fileTree">
+
+                                        </div>
+                                    </div>
+                                    <div class="chart tab-pane active" id="content-tab"
+                                         style="position: relative; min-height: 350px;">
+                                        <div class="table-responsive" id="tableWrapper">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-footer clearfix">
+                                    <!--<a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place-->
+                                    <!--New Order</a>-->
+                                    <a onclick="$('#dataElementModal').modal('hide')"
+                                       class="btn btn-sm btn-info btn-flat pull-right">
+                                        Close </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section layout:fragment="js-extra">
+    <script th:src="@{/js/Utils.js}"></script>
+    <script th:src="@{/third-party/vue/dist/vue.min.js}"></script>
+    <script th:src="@{/third-party/sweetalert2/dist/sweetalert2.all.min.js}"></script>
+    <script th:src="@{/third-party/vis/dist/vis.min.js}"></script>
+    <script th:src="@{/js/task.js}"></script>
+    <script>
+        $('#dataElementModal').on('hidden.bs.modal', function () {
+            document.getElementById("tableWrapper").innerHTML = "";
+            app.popupData.hasFiles = false;
+            $("#fileTree").jstree("destroy");
+        })
+    </script>
+    <script th:src="@{/third-party/jstree/dist/jstree.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/third-party/jstree/dist/themes/default/style.min.css}"/>
+</section>
+
+</html>

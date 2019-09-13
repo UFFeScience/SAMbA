@@ -1,0 +1,10 @@
+sudo chown samba:samba /SAMbAFiles/SAMbA/gitblit/data/git
+sudo chown samba:samba /home/samba/workspace
+sudo chown samba:samba /SAMbAFiles/apache-cassandra/data
+
+sh /StartCassandra.sh
+echo "Starting Web Interface"
+nohup java -jar  /SAMbAFiles/WebInterface/SAMbAWebApplication.jar > /tmp/WebInterfaceLog.txt  &
+sleep 5
+
+echo "Done, now you can enjoy the SAMbA."

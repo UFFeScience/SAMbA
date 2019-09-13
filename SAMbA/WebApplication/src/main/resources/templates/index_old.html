@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Main</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="exec in execucoes">
+            <a :href="'/execution/details?id=' + exec.id">
+                {{exec}}
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+
+</html>

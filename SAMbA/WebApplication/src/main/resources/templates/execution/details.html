@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/DefaultLayout}">
+
+<head>
+    <title>SAMAbA - Details</title>
+</head>
+<section layout:fragment="css-extra">
+    <link th:href="@{/third-party/vis/dist/vis.min.css}" rel="stylesheet" type="text/css"/>
+    <style>
+        #executionTable > tbody > tr:hover {
+            background: #65aaff;
+            cursor: pointer;
+        }
+    </style>
+</section>
+<section layout:fragment="page-header">
+    Details of execution of Dataflow: [[${execution.ApplicationName}]]
+</section>
+
+<section layout:fragment="content" id="app">
+    <input type="hidden" id="_hasFiles" th:value="${hasFiles}"/>
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <i class="fa fa-info-circle"></i>
+                    <h3 class="box-title">Execution Metadata</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="row">
+                        <div th:classappend="${hasFiles} ? col-md-8 : col-md-10">
+                            <dl class="dl-horizontal">
+                                <dt>ID:</dt>
+                                <dd th:text="${execution.id}"></dd>
+                                <dt>Start Time</dt>
+                                <dd th:text="${execution.StartTime}"></dd>
+                                <dt>End Time</dt>
+                                <dd th:text="${execution.EndTime}"></dd>
+                            </dl>
+                        </div>
+
+                        <div class="col-md-2" th:if="${hasFiles}">
+                            <div class="small-box bg-green" style="margin-bottom: 0px;">
+                                <div class="inner" style="padding-bottom: 0px;">
+                                    <img th:src="@{/img/folder.png}"
+                                         style="max-height: 64px;display: block ;margin: 0 auto "/>
+                                </div>
+                                <div class="icon">
+                                </div>
+                                <a href="#" class="small-box-footer" onclick="$('#repositoryModal').modal('show')">
+                                    Repository Explorer
+                                    <i class="fa fa-folder-open-o"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="small-box bg-green" style="margin-bottom: 0px;">
+                                <div class="inner" style="padding-bottom: 0px;">
+                                    <img th:src="@{/img/network-graph-presentation.png}"
+                                         style="max-height: 64px;display: block ;margin: 0 auto "/>
+                                </div>
+                                <div class="icon">
+                                </div>
+                                <a th:href="@{/execution/fullgraph(id=${execution.id})}" class="small-box-footer">
+                                    Show Full Graph
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Transformations Graph</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div id="graph" style="height: 70vh">
+
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="box-footer clearfix">-->
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+                <!--</div>-->
+                <!-- /.box-footer -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Area-->
+    <div class="modal fade" id="repositoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="margin: 0px; padding: 2px">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div class="box box-success" style="margin-bottom: 0px">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">
+                                        Repository of [[${execution.ApplicationName}]], Branch: [[${execution.id}]]
+                                    </h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool"><i
+                                                class="fa fa-times" onclick="$('#repositoryModal').modal('hide')"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body" style="min-height: 350px;">
+                                    <div id="fullRepositoryFileTree">
+
+                                    </div>
+                                </div> <!-- /.box-body -->
+                                <!-- Loading Div-->
+                                <!--<div class="overlay" v-if="charts.modal.consumoIsLoading">-->
+                                <!--<i class="fa fa-refresh fa-spin"></i>-->
+                                <!--</div>-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<section layout:fragment="js-extra">
+    <script th:src="@{/js/Utils.js}"></script>
+    <script th:src="@{/third-party/vue/dist/vue.min.js}"></script>
+    <script th:src="@{/third-party/vis/dist/vis.min.js}"></script>
+    <script th:src="@{/third-party/jstree/dist/jstree.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/third-party/jstree/dist/themes/default/style.min.css}"/>
+    <script th:src="@{/js/details.js}"></script>
+</section>
+
+</html>

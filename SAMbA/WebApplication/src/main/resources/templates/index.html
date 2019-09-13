@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/DefaultLayout}">
+
+<head>
+    <title>SAMbA</title>
+</head>
+<section layout:fragment="css-extra">
+    <style>
+        #executionTable > tbody > tr:hover {
+            background: #65aaff;
+            cursor: pointer;
+        }
+    </style>
+</section>
+<section layout:fragment="page-header">
+    SAMbA - Data Analysis Web Page
+</section>
+
+<section layout:fragment="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Latest Executions</h3>
+
+                    <!--<div class="box-tools pull-right">-->
+                    <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>-->
+                    <!--</button>-->
+                    <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
+                    <!--</div>-->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table no-margin table-hover" id="executionTable">
+                            <thead>
+                            <tr>
+                                <th>Execution ID</th>
+                                <th>Application Name</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="execution : ${executions}">
+                                <td class="exec_id" th:text="${execution.id}"></td>
+                                <td th:text="${execution.ApplicationName}"></td>
+                                <td th:text="${execution.StartTime}"></td>
+                                <td th:text="${execution.EndTime}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.box-body -->
+                <!--<div class="box-footer clearfix">-->
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+                <!--</div>-->
+                <!-- /.box-footer -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section layout:fragment="js-extra">
+    <script>
+        $(document).ready(function () {
+            $('#executionTable tr').click(function () {
+                var execId = $(this).find(".exec_id")[0].innerText;
+                if (execId) {
+                    window.location = "/execution/details?id=" + execId
+                }
+            });
+        });
+    </script>
+</section>
+
+</html>
