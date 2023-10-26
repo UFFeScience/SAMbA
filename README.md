@@ -296,7 +296,7 @@ SAMbA also provides to your users a version control system. When you create a ``
 
 ## Example
 
-You can found a list with examples on [here](examples/README.md).
+We provide a fully reproducible SambA-RaP example [here](https://github.com/UFFeScience/SambA-SciPhy).
 
 ## Download: Docker image
 
@@ -338,9 +338,7 @@ You also can run the scala interactive shell, with all SAMbA/Spark jars, running
 scala -cp $SAMBA_SPARK_CLASS_PATH -J-Xmx1g
 ```
 
-## Presentation Video
+## Demonstration Video
 
-To watch the video, please, click in the image below.
-<a href="https://drive.google.com/file/d/1st1dRJCGyTLNEVjZp5i-nnLjJkVjMNKZ/view" target="_blank">
-![](SAMbA.png)
-</a>
+To watch a demonstration video, click [here](DEMO.md).
+
