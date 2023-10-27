@@ -1,0 +1,36 @@
+>1lcl|AAX69925.1 N-acetyltransferase complex ARD1 subunit, putatives85% similar to SP:Q05885: N-terminal acetyltransferase complex ARD1 subunit homolog(EC 2.3.1.-){Leishmania donovani}(PMID:8378337) Should be merged with annotated gene Tb03.27F10.1000 on overlapping BAC to construct the complete gene; GO_function: N-acetyltransferase activity [GO ID 0008080]; GO_process: metabolism [GO ID 0008152]
+MTTFRDFNLVDIMSFNFVNMDQLTETYNSSFYGEYVTHWPEYQRICIHPTTGVTMAYTLGKAEGEAEDFHGHVSAVTVAP
+TFRRLGLGVTLMKELEATTEYIHNAYFVDLFVRQSNKVAQDMYRGLGYVVY
+>2lcl|CAD49053.1 N-terminal acetyltransferase, putativesPutative acetyltransferase, similar to Drosophila melanogaster Cg14222 protein Pfam match to entry PF00583 Acetyltransf, Acetyltransferase (GNAT) family, score 43.80, E-value 3.8e-09 Similar to Homo sapiens N-terminal acetyltransferase complex ard1 subunit SWALL:AAH08446 (EMBL:AF085355) (178 aa) fasta scores: E(): 1.6e-20, 44.3% id in 158 aa, and to Schizosaccharomyces pombe putative N-terminal acetyltransferase complex protein c16c4.12 spcc16c4.12 SWALL:O74457 (EMBL:AL031535) (180 aa) fasta scores: E(): 1e-19, 42.3% id in 156 aa
+MASYQYFSYIDLYKVNNVNLDPFTEVFNDKFYLRYIYKWPHMNIITKEIDDHTSGYILGKEEGFGQDYHGHVTALSIEED
+SRRTGKGVDLMTEFEKITQIIHKGNFVDLFVRVSNNPAINMYKKLGYVINEEINNYYCGNESALDMRKYLDITNS
+>3lcl|XP_001683754.1 n-terminal acetyltransferase complex ard1 subunit homolog, putativesLmjF25.0020, predicted protein, len = 228 aa, n-terminal acetyltransferase complex ard1 subunit homolog predicted pI = 9.2058; high similarity to ARDH_LEIDO, n-terminal acetyltransferase complex ard1 subunit homolog in Leishmania donovani
+MLPSVVPLPFLSRFSCLRVRKERQKVNVNRAVVQQGDRRRTMTTYRRMTLCDTLQFNFVNLDQLTETYNTSFYGEYVTHW
+PEYQRVCVHPTTGIPMAYTLGKAEGQGEDYHGHVSAVSVAPTFRRVALGETLMVELAQMSELVHNAYFVDLFVRKSNQVA
+QDMYHRLGYIVYRTVLNYYHGDGPKGPFKSDEDALDMRLALRRDKERRKSSVIPLDRPIKPEELEWV
+>4lcl|XP_654064.2 acetyltransferase, GNAT familysencoded by transcript EHI_137930A
+MTTIRKFKCRDILEYSNVNLDYYTETFHFPFYFEYLSKWPEMCFIARDCNGRVEGYHFGKIEGEGEKYHGHLTAITIARE
+FRRIGLSNQLMFWLKQISEEANCYYVDLFVRKSNETAIGMYHRLGYSVYREILEYYSSNNESAYDMRTSLPRDVDKKSII
+PLPKPIYADEADDL
+>5lcl|XP_808666.1 N-acetyltransferase complex ARD1 subunit, putativesheterozygous, Esmeraldo-like haplotype allele of Tc00.1047053509719.9
+MTTYRDFKLTDIMEFNFVNLDQLTETYSTSFYGEYLTHWPEFQRICVHPTTGICMAYALGKAEGKGEDFHGHVSAVTVAP
+IFRRLGLGEALMKELETTTSLVHNAYFVDLFVRQSNKVAQEMYHKLGYIVYRRVLGYYRGDGPKGTFKGDEDALDMRKAM
+PRDRERGRSSVIPLAKPIKPEELEWN
+>6lcl|XP_810355.1 N-acetyltransferase complex ARD1 subunit, putativesheterozygous, non-Esmeraldo-like haplotype allele of Tc00.1047053506713.40
+MTTYRDFKLTDIMEFNFVNLDQLTETYSTSFYGEYLTHWPEYQRICVHPTTGICMAYALGKAEGKGEDFHGHVSAVTVAP
+IFRRLGLGAALMKELEATTSLVHNAYFVDLFVRQSNKVAQEMYHKLGYIVYRRVLGYYRGDGPKGTFKDDEDALDMRKAM
+LRDRERGRSSVIPLAKPI
+>1lcl|AAX69925.1 N-acetyltransferase complex ARD1 subunit, putatives85% similar to SP:Q05885: N-terminal acetyltransferase complex ARD1 subunit homolog(EC 2.3.1.-){Leishmania donovani}(PMID:8378337) Should be merged with annotated gene Tb03.27F10.1000 on overlapping BAC to construct the complete gene; GO_function: N-acetyltransferase activity [GO ID 0008080]; GO_process: metabolism [GO ID 0008152]
+MTTFRDFNLVDIMSFNFVNMDQLTETYNSSFYGEYVTHWPEYQRICIHPTTGVTMAYTLGKAEGEAEDFHGHVSAVTVAP
+TFRRLGLGVTLMKELEATTEYIHNAYFVDLFVRQSNKVAQDMYRGLGYVVY
+>2lcl|CAD49053.1 N-terminal acetyltransferase, putativesPutative acetyltransferase, similar to Drosophila melanogaster Cg14222 protein Pfam match to entry PF00583 Acetyltransf, Acetyltransferase (GNAT) family, score 43.80, E-value 3.8e-09 Similar to Homo sapiens N-terminal acetyltransferase complex ard1 subunit SWALL:AAH08446 (EMBL:AF085355) (178 aa) fasta scores: E(): 1.6e-20, 44.3% id in 158 aa, and to Schizosaccharomyces pombe putative N-terminal acetyltransferase complex protein c16c4.12 spcc16c4.12 SWALL:O74457 (EMBL:AL031535) (180 aa) fasta scores: E(): 1e-19, 42.3% id in 156 aa
+MASYQYFSYIDLYKVNNVNLDPFTEVFNDKFYLRYIYKWPHMNIITKEIDDHTSGYILGKEEGFGQDYHGHVTALSIEED
+SRRTGKGVDLMTEFEKITQIIHKGNFVDLFVRVSNNPAINMYKKLGYVINEEINNYYCGNESALDMRKYLDITNS
+>3lcl|XP_001683754.1 n-terminal acetyltransferase complex ard1 subunit homolog, putativesLmjF25.0020, predicted protein, len = 228 aa, n-terminal acetyltransferase complex ard1 subunit homolog predicted pI = 9.2058; high similarity to ARDH_LEIDO, n-terminal acetyltransferase complex ard1 subunit homolog in Leishmania donovani
+MLPSVVPLPFLSRFSCLRVRKERQKVNVNRAVVQQGDRRRTMTTYRRMTLCDTLQFNFVNLDQLTETYNTSFYGEYVTHW
+PEYQRVCVHPTTGIPMAYTLGKAEGQGEDYHGHVSAVSVAPTFRRVALGETLMVELAQMSELVHNAYFVDLFVRKSNQVA
+QDMYHRLGYIVYRTVLNYYHGDGPKGPFKSDEDALDMRLALRRDKERRKSSVIPLDRPIKPEELEWV
+>4lcl|XP_654064.2 acetyltransferase, GNAT familysencoded by transcript EHI_137930A
+MTTIRKFKCRDILEYSNVNLDYYTETFHFPFYFEYLSKWPEMCFIARDCNGRVEGYHFGKIEGEGEKYHGHLTAITIARE
+FRRIGLSNQLMFWLKQISEEANCYYVDLFVRKSNETAIGMYHRLGYSVYREILEYYSSNNESAYDMRTSLPRDVDKKSII
+PLPKPIYADEADDL

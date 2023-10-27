@@ -71,7 +71,7 @@ class SampleOfMultiLineSchemaOfString extends DataElementSchema[String]{
 }
 ```
 
-To assign a Schema to a RDD, you use the method ```setSchema(schema: DataElementSchema[T])``` that receive as the parameter a Schema of the type that its handle.  
+To assign a Schema to a RDD, you use the method ```setSchema(schema: DataElementSchema[T])``` that receive as the parameter a Schema of the type that its handle.
 
 
 * Sample of assign a Schema to a RDD
@@ -86,7 +86,7 @@ To assign a Schema to a RDD, you use the method ```setSchema(schema: DataElement
     ).setSchema(new SampleOfSingleLineSchemaOfString())
 ```
 
-If you don't inform a Scheme to an RDD, a default one will be used, which change according to the type. 
+If you don't inform a Scheme to an RDD, a default one will be used, which change according to the type.
 
 ### Black-box application support
 
@@ -109,7 +109,7 @@ FileGroupTemplate.ofFile(
 
 //To load more than one, you can use this method
 FileGroupTemplate.ofFiles(
-                  dir: File, //Parent directory 
+                  dir: File, //Parent directory
                   files: scala.List[String], // The lists of files which are inside of this folder
                   extraArgs: Map[String, Any] // Extra Information
           ): FileGroupTemplate
@@ -120,7 +120,7 @@ FileGroupTemplate.ofFiles(
 As previously stated, a FileGroup represents a set of files. This file in memory also can be structured in folders. For example, consider the file:  ```/home/user/somefile.txt```, if you keep the base directory, in the ```FileGroup``` this file will be in the same path, but, if not, this file will be in the root path of ```FileGroup```.
 
 
-* To Load all files of a folder: 
+* To Load all files of a folder:
 
 ```scala
 import br.uff.spark.advancedpipe.FileGroupTemplate
@@ -159,13 +159,13 @@ FileGroupTemplate.ofDirectoryWithFilter(
 import br.uff.spark.advancedpipe.FileGroupTemplate
 
 new FileGroupTemplate(
-         baseDir: File, // Parent directory. If it's null, it's mean to keep base directory of files 
+         baseDir: File, // Parent directory. If it's null, it's mean to keep base directory of files
          files: scala.List[File], // The list of files to be loaded into memory, if the baseDir != null, these files must be inside there.
          extrasInfo: Map[String, Any] // Extra Information
      ): FileGroupTemplate
 
 ```
-When you instantiate a FileGroupTemplate, if you inform the ```baseDir```, this means that all files to load must be inside there. It also means that this folder, in the FileGroup, will be the new root path. 
+When you instantiate a FileGroupTemplate, if you inform the ```baseDir```, this means that all files to load must be inside there. It also means that this folder, in the FileGroup, will be the new root path.
 
 
 * An example of how to instantiate a FileGroupTemplate
@@ -174,7 +174,7 @@ When you instantiate a FileGroupTemplate, if you inform the ```baseDir```, this 
 import br.uff.spark.advancedpipe.FileGroupTemplate
 import java.io.File
 
-// The implementation of FileGroupTemplate.ofFile method 
+// The implementation of FileGroupTemplate.ofFile method
 def ofFile(_file: File, keepBaseDir: Boolean, extraArgs: Map[String, Any]): FileGroupTemplate = {
   val file = _file.getAbsoluteFile
   var baseDir = file.getParentFile
@@ -196,7 +196,7 @@ The method ```fileGroup``` of ```SparkContext```, return a ```RDD[FileGroup]```.
 #### When use the: ```runScientificApplication```
 This method is used to run program/script that is in directory folder informed in Spark configuration with ```setScriptDir```. This method receives as a parameter the command to execute, as its respective arguments. Besides, this method also has a template engine that is used to insert map information from the ```FileGroup```. More information about the template engine can be found [here](http://jtwig.org/documentation/quick-start/application). The source code below is an example of use this method.
 
-```scala 
+```scala
 val sparkContext = new SparkContext(
   new SparkConf().setAppName("Example Black-box application")
     .setScriptDir("/home/user/dataflow/scripts/")
@@ -207,7 +207,7 @@ sparkContext.fileGroup(
       new File("/home/user/dataflow/somefile.txt"),
       false, Map("FILE_NAME" -> "somefile.txt")
   )
-  /* /home/user/dataflow/scripts/someScript.sh */ 
+  /* /home/user/dataflow/scripts/someScript.sh */
 ).runScientificApplication("someScript.sh {{FILE_NAME}}")
 ```
 
@@ -217,14 +217,14 @@ If your programs aren't in the folder which was informed in ```setScriptDir```, 
 * A very simple:
 
 ```scala
-someRDD.runCommand(cmd:Seq[String]): RDD[FileGroup] 
+someRDD.runCommand(cmd:Seq[String]): RDD[FileGroup]
 //Example
-someRDD.runCommand(Array("ls","-a") 
+someRDD.runCommand(Array("ls","-a")
 ```
 
 * A more complex:
 
-```scala 
+```scala
 import br.uff.spark.advancedpipe.{ExecutionPlanning, FileElement}
 
 //function - a function that consumes the extra info provided by FileGroup and return a ExecutionPlanning
@@ -254,19 +254,19 @@ someRDD.runCommand{(extraInfo: Map[String, Any], fileElements: Seq[FileElement])
       executionPlanning.onReadLine = (line)=>{
         println(s"Output of ls command: $line")
       }
-      executionPlanning      
+      executionPlanning
     }
 
 ```
-### FileGroup Attributes 
+### FileGroup Attributes
 The ```FileGroup``` has the following code:
 
-```java 
+```java
 public class FileGroup implements Serializable {
 
     private String name = null; //The Name of FileGroup
     private Map<String, Object> extraInfo; // The map if extra information
-    private FileElement[] fileElements; // A array of files that it represents. 
+    private FileElement[] fileElements; // A array of files that it represents.
   ....
 }
 ```
@@ -279,7 +279,7 @@ To read a file, you need access the fileElements and find what file you want. A 
 - ```getContents().toInputStream(): java.io.InputStream``` - Create a InputStream
 
 ### Saving FileGroup in Disk
-A ```RDD[FileGroup]``` also has two methods to save the data that it represents on disk: 
+A ```RDD[FileGroup]``` also has two methods to save the data that it represents on disk:
 
 - ```saveFilesAt(directory: java.io.File)``` - save the data inside the directory. For each FileGroup, is create another directory with its ID.
 
@@ -287,7 +287,7 @@ A ```RDD[FileGroup]``` also has two methods to save the data that it represents 
 
 ## Web Interface
 
-Another important feature provided by SAMbA is a web interface. This interface is accessed through the browser on localhost on port 8000. In this web interface, you will found information about the execution that already executed, such the transformation graph or the data elements which was generated and used by it. To see this web interface in action, with an explanation of all its feature, please, watch the demonstration video. 
+Another important feature provided by SAMbA is a web interface. This interface is accessed through the browser on localhost on port 8000. In this web interface, you will found information about the execution that already executed, such the transformation graph or the data elements which was generated and used by it. To see this web interface in action, with an explanation of all its feature, please, watch the demonstration video.
 
 ![](webinterface.png)
 
@@ -303,7 +303,7 @@ We provide a fully reproducible SambA-RaP example [here](https://github.com/UFFe
 We make SAMbA available for download through a [Docker](https://www.docker.com/) image. This image has all softwares requirements to run our applications using SAMbA and Apache Spark (our baseline). To download and run it, follow the steps below.
 
 ### Pull the image
-To get the docker image, you need to pull it from docker hub. For this, run the command: 
+To get the docker image, you need to pull it from docker hub. For this, run the command:
 ```bash
 docker pull thaylongs/samba
 ```
@@ -320,19 +320,19 @@ docker run --cap-add mknod --cap-add sys_admin --device=/dev/fuse  \
 
 This command will share the current folder of the terminal (```$PWD:/workspace```) as the workspace of the container. So, in this folder should have the files that you want to use in your experiment, for example, source code and softwares. In our example command, inside the current directory will be created another two folders,  the ```$PWD/repository``` for save data from the git repository,  and the ```$PWD/database``` for save the database data. You can change these directories as you want. This command also opens the ports 8000 and 9042, for the web interface and the Cassandra database, respectively.
 
-After you run the command, an bash in the workspace directory will be available for you run your codes. This container, the binary of Apache Spark and Scala already in the ```PATH``` environment variable. This environment also already has the following variables. 
+After you run the command, an bash in the workspace directory will be available for you run your codes. This container, the binary of Apache Spark and Scala already in the ```PATH``` environment variable. This environment also already has the following variables.
 - SPARK_HOME => The SAMbA root path.
 - WORKSPACE  => The workspace path.
 - SAMBA_SPARK_REPOSITORY => The VCS repository path.
-- SAMBA_SPARK_CLASS_PATH => List of all jars of SAMbA/Spark, it is used to compile your source code. 
+- SAMBA_SPARK_CLASS_PATH => List of all jars of SAMbA/Spark, it is used to compile your source code.
 
 In this container, to compile a scala source code for create the .jar to submit to SAMbA, you run the follow command:
 
 ```bash
 scalac -classpath "$SAMBA_SPARK_CLASS_PATH" SourceCode.scala -d TheOutput.jar
-``` 
+```
 
-You also can run the scala interactive shell, with all SAMbA/Spark jars, running the follow command: 
+You also can run the scala interactive shell, with all SAMbA/Spark jars, running the follow command:
 
 ```bash
 scala -cp $SAMBA_SPARK_CLASS_PATH -J-Xmx1g
